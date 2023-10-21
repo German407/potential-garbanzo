@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #options {
+            text-align: center;
+        }
+        #heart {
+            display: none;
+            font-size: 2rem;
+            color: red;
+        }
+        #play-button {
+            cursor: pointer;
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="play-button">TOCA ACA ANTES DE NADA</div>
+    <audio id="intro" src="tu_cancion.mp3"></audio>
+
+    <h1>¿Me perdonas?</h1>
+    <div id="options">
+        <button id="yes">Sí</button>
+        <button id="no">No</button>
+    </div>
+    <div id="heart">❤️</div>
+
+
+
+    <div>
+        <img src="FuvMTH9WIAAZY82.jpg">
+        <style>
+            div {
+                float: right;
+                margin: 0 0 10px 10px; /* Opcional: agrega margen alrededor de la imagen */
+            }
+        </style>
+        
+    </div>
+    <div>
+        <p>si te he fallado te pido perdón de la única forma que se</p>
+        <p>abriendo las puertas de mi corazón </p>
+        <p>para cuando decidas volveeeeeeeeeer.</p>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const heart = document.getElementById('heart');
+        const playButton = document.getElementById('play-button');
+        const audio = document.getElementById('intro');
+
+        yesButton.addEventListener('click', () => {
+            heart.style.display = 'block';
+        });
+
+        noButton.addEventListener('click', () => {
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+
+        playButton.addEventListener('click', () => {
+            audio.play();
+            playButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
